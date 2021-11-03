@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "app.devfest.composablelottery"
+        minSdk 24
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = '1.0.4'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.compose.ui:ui:1.0.4'
+    // Tooling support (Previews, etc.)
+    implementation 'androidx.compose.ui:ui-tooling:1.0.4'
+    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
+    implementation 'androidx.compose.foundation:foundation:1.0.4'
+    // Material Design
+    implementation 'androidx.compose.material:material:1.0.4'
+    // Material design icons
+    implementation 'androidx.compose.material:material-icons-core:1.0.4'
+    implementation 'androidx.compose.material:material-icons-extended:1.0.4'
+    // Integration with activities
+    implementation 'androidx.activity:activity-compose:1.3.1'
+
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
