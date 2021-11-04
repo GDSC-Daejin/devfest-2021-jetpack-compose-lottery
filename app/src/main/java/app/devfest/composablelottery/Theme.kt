@@ -43,7 +43,7 @@ fun AppTheme(
 ) {
     val isSystemDarkTheme = isSystemInDarkTheme()
     MaterialTheme(
-        colors = if (isSystemDarkTheme) lightColors else darkColors,
+        colors = if (isSystemDarkTheme) darkColors else lightColors,
         content = content
     )
 }
