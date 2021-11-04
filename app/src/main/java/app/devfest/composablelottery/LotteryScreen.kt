@@ -1,11 +1,18 @@
 package app.devfest.composablelottery
 
-import androidx.compose.runtime.Composable
-import app.devfest.composablelottery.ui.SuperFancyButton
+import androidx.compose.runtime.*
 
 @Composable
 fun LotteryScreen() {
+    /**
+     * 로또 앱 화면 UI 를 구현할 Composable 함수입니다.
+     * 아래와 같은 Composable 함수들을 포함하여 이 화면을 구성할 것입니다.
+     *
+     * [app.devfest.composablelottery.ui.LotteryListUi]
+     * [app.devfest.composablelottery.ui.LotteryPickButton]
+     * */
 
-    SuperFancyButton()
+//    var totalLottoList by remember { mutableStateOf((1..45).toList()) }
+//    var lottoList by remember { mutableStateOf(emptyList<Int>()) }
 
 }
