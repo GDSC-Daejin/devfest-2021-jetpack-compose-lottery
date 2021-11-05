@@ -18,6 +18,9 @@ fun LotteryListUi(lottoNumbers: List<Int>) {
         Text(text = "아래 버튼을 눌러 로또 번호를 뽑아주세요!", color = MaterialTheme.colors.onBackground)
     } else {
         Row {
+            // 맨 왼쪽 Margin 을 위해 추가했습니다.
+            Spacer(modifier = Modifier.width(10.dp))
+
             lottoNumbers.forEach {
                 LotteryItemUi(lottoNumber = it)
                 Spacer(modifier = Modifier.width(10.dp))
