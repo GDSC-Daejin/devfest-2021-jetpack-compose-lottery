@@ -17,11 +17,6 @@ import app.devfest.composablelottery.AppTheme
 
 @Composable
 fun LotteryItemUi(lottoNumber: Int) {
-    /**
-     * 이곳은 로또 공 UI 를 구현할 Composable 함수입니다.
-     * 매개변수로 Int 자료형의 Lotto Number 를 받습니다.
-     * number 의 범위에 따라 다른 색상을 표시합니다.
-     * */
 
     val ballColor = when (lottoNumber) {
         in 1 .. 10 -> Color(0xFFE9B823)
