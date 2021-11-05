@@ -10,9 +10,13 @@ fun LotteryScreen() {
      *
      * [app.devfest.composablelottery.ui.LotteryListUi]
      * [app.devfest.composablelottery.ui.LotteryPickButton]
+     *
+     * XML 에는 LinearLayout, FrameLayout 등이 있다면
+     * Compose 에는 Column (LinearLayout+Vertical), Row (LinearLayout+Horizontal), Box (FrameLayout)
+     * 가 있습니다.
      * */
 
 //    var totalLottoList by remember { mutableStateOf((1..45).toList()) }
-//    var lottoList by remember { mutableStateOf(emptyList<Int>()) }
+//    var pickedLottoList by remember { mutableStateOf(emptyList<Int>()) }
 
 }
