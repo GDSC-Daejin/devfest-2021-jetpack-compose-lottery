@@ -1,8 +1,10 @@
 package app.devfest.composablelottery.ui
 
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 @Composable
 fun LotteryPickButton(
@@ -21,14 +23,20 @@ fun LotteryPickButton(
      * */
     if (pickedLottoList.size == 6) {
         // 다시 뽑기 버튼 구현
-        Button(onClick = { onResetLottoList() }) {
+        Button(
+            onClick = { onResetLottoList() },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Red.copy(0.8f),
+            contentColor = Color.White)
+        ) {
             Text(text = "다시 뽑기")
         }
     } else {
         // 뽑기 버튼 구현
-        Button(onClick = {
-            onLottoNumberPicked((totalLottoList - pickedLottoList.toSet()).shuffled().first())
-        }) {
+        Button(
+            onClick = {
+                onLottoNumberPicked((totalLottoList - pickedLottoList.toSet()).shuffled().first())
+            },
+        ) {
             Text(text = "뽑기")
         }
     }
