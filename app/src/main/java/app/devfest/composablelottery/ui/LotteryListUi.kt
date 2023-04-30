@@ -1,12 +1,19 @@
 package app.devfest.composablelottery.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.devfest.composablelottery.AppTheme
@@ -24,13 +31,26 @@ fun LotteryListUi(lottoNumbers: List<Int>) {
      * */
 
     Row(
-        modifier = Modifier.fillMaxSize(),
-        horizontalArrangement = Arrangement.Center
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp)
+            .padding(20.dp)
+            .background(Color.Yellow.copy(alpha = 0.3f)),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        lottoNumbers.forEach {
-            LotteryItemUi(lottoNumber = it)
-            Spacer(modifier = Modifier.size(5.dp))
+
+        if (lottoNumbers.isEmpty()) {
+            Text(text = "아래 버튼을 눌러 로또 번호를 뽑아주세요!",
+                color = Color.Black,
+                fontWeight = FontWeight.ExtraBold)
+        } else {
+            lottoNumbers.forEach {
+                LotteryItemUi(lottoNumber = it)
+                Spacer(modifier = Modifier.size(5.dp))
+            }
         }
+
     }
 
 }
